@@ -44,7 +44,6 @@
       font-family: 'Playfair Display', serif;
     }
 
-    /* HEADER: Ya no persigue la pantalla al bajar */
     header {
       position: relative;
       width: 100%;
@@ -73,7 +72,7 @@
     }
 
     .logo-box {
-      width: 150px;
+      width: 220px;
       height: auto;
       max-height: 75px;
       display: flex;
@@ -83,8 +82,8 @@
     }
 
     .logo-box img {
-      width: 75%;
-      height: 75%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
     }
 
@@ -109,7 +108,6 @@
       color: var(--mango-tango);
     }
 
-    /* SECCIÓN HERO */
     .hero {
       padding: 40px 1.5rem 60px;
       max-width: 1200px;
@@ -243,75 +241,25 @@
       margin-bottom: 1rem;
     }
 
-    /* REVISTA Y QR: Corregido tamaño en celulares */
+    /* SECCIÓN DE LA REVISTA INTERACTIVA */
     .section-magazine {
       background-color: var(--wheatfield);
       padding: 60px 1.5rem;
     }
 
-    .magazine-grid {
-      max-width: 1200px;
+    .flipbook-container {
+      max-width: 1000px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .magazine-full-display {
-      width: 100%;
       background: var(--white);
       border-radius: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
+      padding: 1.5rem;
       box-shadow: var(--shadow);
+      border-top: 5px solid var(--mango-tango);
     }
 
-    .magazine-full-display img {
-      width: 300%;
-      height: auto;
-      max-width: 500px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    .qr-card-box {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 1.8rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      border-top: 5px solid var(--curious-blue);
-    }
-
-    .qr-display-area {
-      width: 160px;
-      height: 160px;
-      margin: 1.2rem auto;
+    .heyzine-flipbook {
       border-radius: 12px;
-      background-color: var(--dawn-pink);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.5rem;
-    }
-
-    .qr-display-area img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .qr-ig-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--fire);
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 0.9rem;
+      overflow: hidden;
     }
 
     .timeline {
@@ -393,7 +341,7 @@
     }
 
     @media (max-width: 768px) {
-      .hero, .magazine-grid {
+      .hero {
         grid-template-columns: 1fr;
         text-align: center;
       }
@@ -402,6 +350,9 @@
       }
       .hero-content h2 {
         font-size: 1.9rem;
+      }
+      .heyzine-flipbook {
+        height: 320px !important;
       }
     }
   </style>
@@ -526,31 +477,18 @@
     </div>
   </section>
 
+  <!-- ================= REVISTA INTERACTIVA (HEYZINE FLIPBOOK) ================= -->
   <section id="revista" class="section-magazine">
     <div class="section-title" style="margin-bottom: 2rem;">
-      <h3>Nuestra Revista</h3>
+      <h3>Nuestra Revista Interactiva</h3>
       <div></div>
     </div>
 
-    <div class="magazine-grid">
-      <div class="magazine-full-display">
-        <img src="revistamockup.png" alt="Portada de la Revista Editorial De Sales">
+    <div class="flipbook-container">
+      <div class="heyzine-flipbook" style="width: 100%; height: 500px; border: 1px solid lightgray;">
+        <a href="https://heyzine.com/flip-book/dfd6b3e48c.html">View the flipbook</a>
       </div>
-
-      <div class="qr-card-box">
-        <h4 style="color: var(--rich-mahogany); font-size: 1.2rem;">Acceso a la revista digital QR</h4>
-        <p style="font-size: 0.85rem; color: #666; margin-top: 0.4rem;">
-          Escanea para acceder a nuestra revista digital.
-        </p>
-
-        <div class="qr-display-area">
-          <img src="imgqr.png" alt="Código QR Instagram Editorial De Sales">
-        </div>
-
-        <a href="https://www.instagram.com/editorialdesales?stkn=OGJubGVmbXBxeDhy" target="_blank" rel="noopener noreferrer" class="qr-ig-link">
-          <i class="fa-brands fa-instagram"></i> Visitar @editorialdesales
-        </a>
-      </div>
+      <script async src="https://heyzine.com/release/embed.min.js"></script>
     </div>
   </section>
 
